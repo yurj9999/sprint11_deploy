@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+  <link rel="stylesheet" href="style.a9b8033e2603a6555b0c.css?4843988c41e28408a78f">
 </head>
 <body>
   <div class="root">
     <header class="header root__section">
-      <img src="<%=require('./images/logo.svg')%>" alt="mesto logo" class="logo">
+      <img src="../images/logo.svg" alt="mesto logo" class="logo">
     </header>
     <div class="profile root__section">
       <div class="user-info">
@@ -26,7 +26,7 @@
   <div class="places-list root__section"></div>
     <div class="popup">
       <div class="popup__content">
-        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+        <img src="../images/close.svg" alt="" class="popup__close">
         <h3 class="popup__title"></h3>
         <form class="popup__form" name="new">
           <input type="text" name="name" class="popup__input popup__input_type_name" required minlength="2" maxlength="30">
@@ -39,7 +39,7 @@
     </div>
   <div class="profile-photo">
     <div class="profile-photo__content">
-      <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+      <img src="../images/close.svg" alt="" class="popup__close">
       <h3 class="profile-photo__title">Обновить аватар</h3>
       <form class="profile-photo__form" name="photo">
         <input type="url" placeholder="Ссылка на аватар" name="ava" class="profile-photo__input input_link-photo-url" required>
@@ -50,11 +50,11 @@
   </div>
   <div class="popup-photo">
     <div class="popup-photo__content">
-      <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+      <img src="../images/close.svg" alt="" class="popup__close">
       <img class="popup-photo__main">
     </div>  
   </div>
 </div>
-<script src="<%=htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+<script src="main8fa5d4a173f519f286ea.js?4843988c41e28408a78f"></script>
 </body>
 </html>
