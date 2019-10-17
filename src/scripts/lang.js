@@ -1,6 +1,6 @@
-formInput=document.forms.new.elements;
+const formInput=document.forms.new.elements;
 
-formEdit = { //объект с данными для создания формы редактирования профиля
+let formEdit = { //объект с данными для создания формы редактирования профиля
     title: 'Редактировать профиль', //заголовок формы
     input1Title: 'Имя', //название первого поля ввода
     input2Title: 'О себе',//название второго поля ввода
@@ -14,7 +14,7 @@ formEdit = { //объект с данными для создания формы
     btnStyle: '', //стиль текста кнопки
   };
   
-  formPlus = { //объект с данными для создания формы добавления карточки
+  let formPlus = { //объект с данными для создания формы добавления карточки
     title: 'Новое место',
     input1Title: 'Название',
     input2Title: 'Ссылка на картинку',
@@ -28,7 +28,7 @@ formEdit = { //объект с данными для создания формы
     btnStyle: 'font-size: 40px;'
   };
 
-  objInput1={ // объект, содержащий параметры для метода проверки поля ввода - checkForValid
+  let objInput1={ // объект, содержащий параметры для метода проверки поля ввода - checkForValid
     input1: formInput.name, //первое поле
     errorClass: '.error__first-input', //класс содержащий сообщение об ошибке
     message1: 'Это обязательное поле', //сообщение об ошибке №1
@@ -36,7 +36,7 @@ formEdit = { //объект с данными для создания формы
     input2: formInput.link //второе поле
   }
 
-  objInput2={ 
+  let objInput2={ 
     input1: formInput.link, 
     errorClass: '.error__second-input', 
     message1: 'Это обязательное поле',
@@ -44,10 +44,12 @@ formEdit = { //объект с данными для создания формы
     input2: formInput.name 
   }
 
-  objInput2Url={
+  let objInput2Url={
     input1: formInput.link, 
     errorClass: '.error__second-input', 
     message1: 'Это обязательное поле',
     message2: 'Здесь должна быть ссылка', 
     input2: formInput.name
   }
+
+  export {formEdit, formPlus, objInput1, objInput2, objInput2Url};

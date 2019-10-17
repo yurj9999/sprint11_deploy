@@ -42,3 +42,5 @@ class Card{
     return this.cardContainer;
   }
 }
+
+export default Card;

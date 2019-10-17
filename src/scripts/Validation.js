@@ -1,3 +1,5 @@
+import {objInput1, objInput2, objInput2Url} from './lang.js';
+
 class Validation{
   constructor(){
     this.formInput=document.forms.new.elements;
@@ -60,3 +62,5 @@ class Validation{
     }
   }
 }
+
+export default Validation;

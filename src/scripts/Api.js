@@ -1,3 +1,9 @@
+import {popup} from './script.js';
+import {formEdit} from './lang.js';
+import Card from './Card.js';
+
+import {serverUrl} from '../index.js';
+
 class Api{
     constructor(dom){
         this.dom=dom;
@@ -9,7 +15,7 @@ class Api{
     }
 
     getProfile(){ // загрузка профиля
-        fetch('http://95.216.175.5/cohort3/users/me',{
+        fetch(`${serverUrl}/users/me`,{
             headers: {
                 authorization: this.myId
             }
@@ -33,7 +39,7 @@ class Api{
     }
 
     getCards(){ // загрузка карточек
-        fetch('http://95.216.175.5/cohort3/cards', {
+        fetch(`${serverUrl}/cards`, {
             headers: {
                 authorization: this.myId
             }
@@ -77,7 +83,7 @@ class Api{
         let jobInput=this.formInput[1].value; 
 
         popup.loading(true);
-        fetch('http://95.216.175.5/cohort3/users/me',{
+        fetch(`${serverUrl}/users/me`,{
             method: 'PATCH',
             headers: {
                 authorization: this.myId,
@@ -112,7 +118,7 @@ class Api{
         const photo=this.formProfilePhoto[0].value;
 
         popup.loading(true);
-        fetch('http://95.216.175.5/cohort3/users/me/avatar',{
+        fetch(`${serverUrl}/users/me/avatar`,{
             method: 'PATCH',
             headers: {
                 authorization: this.myId,
@@ -144,7 +150,7 @@ class Api{
         let pathPic=this.formInput[1].value;
 
         popup.loading(true);
-        fetch('http://95.216.175.5/cohort3/cards',{
+        fetch(`${serverUrl}/cards`,{
             method: 'POST',
             headers: {
                 authorization: this.myId,
@@ -183,7 +189,7 @@ class Api{
 
     deleteCard(e, cardId){ // метод удаления карточки
         if (window.confirm('Вы действительно хотите удалить эту карточку ?')) {
-            fetch(`http://95.216.175.5/cohort3/cards/${cardId}`,{
+            fetch(`${serverUrl}/cards/${cardId}`,{
                 method: 'DELETE',
                 headers: {
                     authorization: this.myId
@@ -204,7 +210,7 @@ class Api{
 
     likeCard(e, cardId){ // метод лайка карточки
         if (e.target.getAttribute('id') === 'isLiked') { // проверяем есть лайк или нет
-            fetch(`http://95.216.175.5/cohort3/cards/like/${cardId}`,{
+            fetch(`${serverUrl}/cards/like/${cardId}`,{
                 method: 'DELETE',
                 headers: {
                     authorization: this.myId
@@ -223,7 +229,7 @@ class Api{
                 alert(err);
             })
         } else {
-            fetch(`http://95.216.175.5/cohort3/cards/like/${cardId}`,{
+            fetch(`${serverUrl}/cards/like/${cardId}`,{
                 method: 'PUT',
                 headers: {
                     authorization: this.myId
@@ -244,3 +250,5 @@ class Api{
         }
     }
 }
+
+export default Api;
