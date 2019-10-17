@@ -1,3 +1,6 @@
+import {api} from './script.js';
+import {formEdit, formPlus} from './lang.js';
+
 class Popup{
   constructor(dom, valid){
     this.valid=valid;
@@ -124,4 +127,5 @@ class Popup{
     document.querySelector('.popup').classList.add('popup_is-opened');
   }
 }
-  
+
+export default Popup;
