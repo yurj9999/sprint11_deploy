@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production rimraf dist && webpack --mode production",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --config webpack.config.js --open --watch"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --config webpack.config.js --open --watch",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/yurj9999/sprint11_deploy/issues"
   },
-  "homepage": "https://github.com/yurj9999/sprint11_deploy#readme",
+  "homepage": "https://yurj9999.github.io/sprint11_deploy/",
   "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
